@@ -1,0 +1,306 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c6e2ff; /* Light gray background */
+}
+
+header {
+    background-color: #007bff; /* Blue */
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0a500; /* Gold */
+}
+
+.hero-section {
+    background: url('home.png.jpg') no-repeat center center/cover;
+    opacity: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    z-index: 0;
+}
+
+.hero-content h1 {
+    opacity: 100%;
+    font-size: 3rem;
+    margin: 0;
+    color: #ff0000; /* Red */
+    z-index: 1;
+}
+
+.hero-content p {
+    opacity: 100%;
+    font-size: 1.5rem;   
+    margin: 0;
+    color: #ff0000; /* Red */
+    z-index: 1;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section#about, section#join, section#contact {
+    background: #ffffff; /* White */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Coordinator section */
+#coordinator {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.coordinator-image img {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coordinator-info {
+    max-width: 500px;
+}
+
+.coordinator-info p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Team section */
+#team {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.team-hierarchy {
+    text-align: center;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member p {
+    margin-top: 10px;
+    font-weight: 700;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #005f73; /* Dark teal */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #f0a500;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Activities and Gallery grid */
+.activities-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.activities-grid .activity, .gallery-grid img {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.activities-grid .activity:hover, .gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background: #005f73; /* Dark teal */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #f0a500; /* Gold */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .activities-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #coordinator {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .coordinator-image img {
+        margin: 0 0 20px 0;
+    }
+}
+
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+div.gallery {
+    margin: 10px;
+    width: 180px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+div.gallery:hover {
+    border: 1px solid #dc3545; /* Red border on hover */
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.tit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media Query for Tablets and larger devices */
+@media (min-width: 768px) {
+    .gallery-container {
+        margin: 40px; /* Increase margin for larger spacing */
+    }
+
+    div.gallery {
+        width: 220px; /* Larger width for tablets and larger devices */
+    }
+}
+
+/* Media Query for Desktops */
+@media (min-width: 992px) {
+    .gallery-container {
+        margin: 60px; /* Further increase margin for desktops */
+    }
+
+    div.gallery {
+        width: 300px; /* Even larger width for desktops */
+    }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="gallery-styles.css">
+    <style>
+        /* Additional styles for zooming image */
+        .zoomed-img-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it appears on top */
+        }
+
+        .zoomed-img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        .zoomed-img-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1100; /* Ensure nav appears above image */
+        }
+
+        .zoomed-img-prev,
+        .zoomed-img-next {
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none; /* Prevent text selection */
+        }
+
+        .zoomed-img-prev:hover,
+        .zoomed-img-next:hover {
+            color: #f0a500; /* Gold */
+        }
+
+        .zoomed-img-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">NSS CIST</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="joinus.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="tit">
+        <h1>Cloth Donation Drive</h1>
+    </div>
+    <div id="gallery-container" class="gallery-container"></div>
+
+    <!-- Zoomed Image Container -->
+    <div id="zoomed-img-container" class="zoomed-img-container">
+        <img id="zoomed-img" class="zoomed-img" src="" alt="Zoomed Image">
+        <span id="zoomed-img-close" class="zoomed-img-close">&times;</span>
+        <div class="zoomed-img-nav">
+            <span id="zoomed-img-prev" class="zoomed-img-prev">&lt;</span>
+            <span id="zoomed-img-next" class="zoomed-img-next">&gt;</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imageFolder = 'CDD/'; // Folder containing the images
+            const imageList = [];
+            let currentIndex = 0;
+
+            // Generate image filenames from 1.jpg to 15.jpg
+            for (let i = 1; i <= 15; i++) {
+                imageList.push(`${i}.jpg`);
+            }
+
+            const galleryContainer = document.getElementById('gallery-container');
+
+            imageList.forEach((imageName, index) => {
+                const galleryDiv = document.createElement('div');
+                galleryDiv.classList.add('gallery');
+
+                const imgElement = document.createElement('img');
+                imgElement.src = imageFolder + imageName;
+                imgElement.alt = 'Cloth Donation Drive';
+                imgElement.width = 600;
+                imgElement.height = 400;
+
+                // Add click event listener to zoom the image
+                imgElement.addEventListener('click', function() {
+                    currentIndex = index; // Update current index
+                    zoomImage(imageName);
+                });
+
+                galleryDiv.appendChild(imgElement);
+
+                galleryContainer.appendChild(galleryDiv);
+            });
+
+            // Function to zoom the image
+            function zoomImage(imageName) {
+                const zoomedImgContainer = document.getElementById('zoomed-img-container');
+                const zoomedImg = document.getElementById('zoomed-img');
+                const zoomedImgClose = document.getElementById('zoomed-img-close');
+                const zoomedImgPrev = document.getElementById('zoomed-img-prev');
+                const zoomedImgNext = document.getElementById('zoomed-img-next');
+
+                zoomedImg.src = imageFolder + imageName;
+                zoomedImg.alt = 'Zoomed Image';
+
+                zoomedImgContainer.style.display = 'flex';
+
+                // Close zoomed image on click
+                zoomedImgClose.addEventListener('click', function() {
+                    zoomedImgContainer.style.display = 'none';
+                });
+
+                // Previous button functionality
+                zoomedImgPrev.addEventListener('click', function() {
+                    currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+                    const prevImage = imageList[currentIndex];
+                    zoomImage(prevImage);
+                });
+
+                // Next button functionality
+                zoomedImgNext.addEventListener('click', function() {
+                    currentIndex = (currentIndex + 1) % imageList.length;
+                    const nextImage = imageList[currentIndex];
+                    zoomImage(nextImage);
+                });
+            }
+        });
+    </script>
+     <footer>
+        <p>Designed and managed by <a href="https://github.com/adarshkrdubay"> adarshkrdubay</a> </p>
+        <p>&copy; 2024 NSS CIST. All rights reserved. </p>
+    </footer>
+</body>
+</html>

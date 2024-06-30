@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c6e2ff; /* Light gray background */
+}
+
+header {
+    background-color: #007bff; /* Blue */
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0a500; /* Gold */
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+div.gallery {
+    margin: 10px;
+    border: 5px solid #5fa1e7; /* Blue border */
+    width: 180px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+div.gallery:hover {
+    border: 1px solid #dc3545; /* Red border on hover */
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.tit {
+    text-align: center;
+    margin-top: 20px;
+}
+footer {
+    background-color: #005f73; /* Dark teal */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 0;
+}
+/* Media Query for Tablets and larger devices */
+@media (min-width: 768px) {
+    .gallery-container {
+        margin: 40px; /* Increase margin for larger spacing */
+    }
+
+    div.gallery {
+        width: 220px; /* Larger width for tablets and larger devices */
+    }
+}
+
+/* Media Query for Desktops */
+@media (min-width: 992px) {
+    .gallery-container {
+        margin: 60px; /* Further increase margin for desktops */
+    }
+
+    div.gallery {
+        width: 300px; /* Even larger width for desktops */
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NSS CIST</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for image description */
+        .gallery {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .desc {
+            background: rgba(130, 167, 209, 0.8); /* Semi-transparent black background */
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            text-align: center;
+            visibility: hidden; /* Hide description by default */
+            opacity: 0; /* Make description transparent by default */
+            transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+        }
+
+        .gallery:hover .desc {
+            visibility: visible; /* Show description on hover */
+            opacity: 1; /* Fully opaque description on hover */
+        }
+
+        /* Ensure footer is at the bottom */
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #005f73; /* Dark teal */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #f0a500;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+             <img style="height: 50px;"  src="cistlogo.png" alt=""></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="joinus.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="logo"><img style="height: 50px;" src="NSS.png" alt="" srcset=""> 
+        </nav>
+    </header>
+
+    <section id="coordinator">
+        
+        <p>We are the NSS unit of CIST, dedicated to serving the community and fostering the spirit of volunteerism among students. Our mission is to empower students to contribute to society through various activities and programs.</p>
+    </section>
+
+    <section id="coordinator">
+        <div class="coordinator-image">
+            <img src="coordinator.jpg" alt="Ankur Verma">
+        </div>  
+       
+        <div class="coordinator-section">
+            
+            <div class="coordinator-info">
+                <h2>Program Coordinator</h2>
+                <p><strong>Name:</strong> Ankur Verma</p>
+                <p><strong>Position:</strong> Program Coordinator</p>
+                <p><strong>Department:</strong> Civil Engineering</p>
+                <p><strong>Description:</strong> Ankur Verma is a dedicated professor in the Civil Engineering department and the program coordinator of NSS CIST. He has been instrumental in guiding and mentoring students in various NSS activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2>Our Team</h2>
+        <div class="team-hierarchy">
+            <div class="team-member">
+                <img src="gs.jpg" alt="General Secretary">
+                <p><strong> General Secretary</strong></p>
+                <p>Deepak kumar</p>
+            </div>
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="sec1.jpg" alt="Secretary">
+                    <p><strong>Secretary </strong></p>
+                    <p>Dev </p>
+                </div>
+                <div class="team-member">
+                    <img src="sec2.jpg" alt="Secretary 2">
+                    <p><strong>Secretary </strong></p>
+                    <p>Tanu  </p>
+                </div>
+            </div>
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="exec1.jpg" alt="Executive 1">
+                    <p><strong>Name:</strong> Executive 1</p>
+                </div>
+                <div class="team-member">
+                    <img src="exec2.jpg" alt="Executive 2">
+                    <p><strong>Name:</strong> Executive 2</p>
+                </div>
+                <div class="team-member">
+                    <img src="exec3.jpg" alt="Executive 3">
+                    <p><strong>Name:</strong> Executive 3</p>
+                </div>
+                <div class="team-member">
+                    <img src="exec4.jpg" alt="Executive 4">
+                    <p><strong>Name:</strong> Executive 4</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed and managed by <a href="https://github.com/adarshkrdubay">adarshkrdubay</a></p>
+        <p>&copy; 2024 NSS CIST. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
