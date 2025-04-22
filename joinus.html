@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - NSS CIST</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Roboto', sans-serif;
       display: flex;
-      min-height: 100vh;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -30,67 +29,52 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      position: relative;
     }
 
-    nav ul {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav img {
+      height: 40px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      padding-left: 0;
+      gap: 20px;
     }
 
-    nav ul li a {
-      color: #ffffff;
+    ul.nav-links li a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
     }
 
-    nav ul li a:hover {
+    ul.nav-links li a:hover {
       color: #f0a500;
-    }
-
-    nav img {
-      height: 50px;
-      margin-right: 10px;
     }
 
     main {
       flex: 1;
-      padding: 20px;
-    }
-
-    .gallery {
-      position: relative;
-      display: inline-block;
-      margin: 20px;
-      max-width: 100%;
-    }
-
-    .desc {
-      background: rgba(130, 167, 209, 0.8);
-      color: #fff;
-      font-size: 14px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      text-align: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .gallery:hover .desc {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .coordinator-section {
-      display: flex;
-      justify-content: center;
       padding: 20px;
     }
 
@@ -101,6 +85,12 @@
       border: none;
     }
 
+    .coordinator-section {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
     footer {
       background-color: #005f73;
       color: #fff;
@@ -108,85 +98,92 @@
       padding: 10px 0;
     }
 
-    footer p {
-      margin: 5px 0;
-    }
-
     footer a {
       color: #f0a500;
       text-decoration: underline;
-      transition: color 0.3s;
     }
 
     footer a:hover {
       color: white;
-      text-decoration: none;
     }
 
-    /* --- Mobile Styles --- */
+    /* === Mobile Styles === */
     @media (max-width: 768px) {
-      nav {
+      .menu-toggle {
+        display: flex;
+      }
+
+      ul.nav-links {
         flex-direction: column;
-        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #005f73;
+        display: none;
+        padding: 10px 0;
       }
 
-      nav ul {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
+      ul.nav-links.active {
+        display: flex;
       }
 
-      nav ul li {
-        padding: 8px 0;
-      }
-
-      .coordinator-section {
-        padding: 10px;
-      }
-
-      iframe {
-        height: 500px;
-      }
-
-      .gallery {
-        width: 100%;
-        margin: 10px 0;
+      ul.nav-links li {
+        text-align: center;
+        padding: 10px 0;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo"><img src="cistlogo.png" alt="CIST Logo" /></div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="#activities">Activities</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="joinus.html">Join Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="logo"><img src="NSS.png" alt="NSS Logo" /></div>
-    </nav>
-  </header>
 
-  <main>
-    <section id="coordinator">
-      <div class="coordinator-section">
-        <div class="coordinator-info">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSela5hfTsFJ42ec0JH3K968txSgGDUnEtsCZAcCDiDqtqmZ0A/viewform?embedded=true">Loading…</iframe>
-        </div>
-      </div>
-    </section>
-  </main>
+<header>
+  <nav>
+    <div class="logo-container">
+      <img src="cistlogo.png" alt="CIST Logo" />
+      <img src="NSS.png" alt="NSS Logo" />
+    </div>
 
-  <footer>
-    <p>Designed and managed by <a href="https://github.com/adarshkrdubay">adarshkrdubay</a></p>
-    <p>&copy; 2024 NSS CIST. All rights reserved.</p>
-  </footer>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-  <script src="script.js"></script>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="joinus.html">Join Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="coordinator">
+    <div class="coordinator-section">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSela5hfTsFJ42ec0JH3K968txSgGDUnEtsCZAcCDiDqtqmZ0A/viewform?embedded=true">Loading…</iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Designed and managed by <a href="https://github.com/adarshkrdubay">adarshkrdubay</a></p>
+  <p>&copy; 2024 NSS CIST. All rights reserved.</p>
+</footer>
+
+<script>
+  // Hamburger menu toggle script
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
